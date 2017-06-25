@@ -1,0 +1,37 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "title": "Callout",
+  "category": "organism",
+  "type": "object",
+  "properties": {
+    "name": {
+      "description": "The name of the pattern, used to identify pattern files during validation",
+      "type": "string",
+      "default": "callout",
+      "options": {
+        "hidden": true
+      }
+    },
+    "callOut": {
+      "type": "object",
+      "properties": {
+        "text": {
+          "type": "string",
+          "default": "Testimonial from a client or quote from source that you want highlighted."
+        },
+        "author": {
+          "type": "string",
+          "default": "Jane Doe"
+        },
+        "title": {
+          "type": "string",
+          "default": "Jane Doe's Title"
+        }
+      },
+      "required": ["text", "author", "title"],
+      "additionalProperties": false
+    }
+  },
+  "required": ["callOut"],
+  "additionalProperties": false
+}

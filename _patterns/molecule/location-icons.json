@@ -1,0 +1,17 @@
+{
+  "locationIcons": {
+    "icons": [{
+      "path":"@atoms/icons/svg-transit.twig",
+      "name":"Transit Friendly"
+    },{
+      "path":"@atoms/icons/svg-castle.twig",
+      "name":"Historic Site"
+    },{
+      "path":"@atoms/icons/svg-wheelchair.twig",
+      "name":"Wheelchair Accessible"
+    },{
+      "path":"@atoms/icons/svg-dog.twig",
+      "name":"Dogs Allowed"
+    }]
+  }
+}

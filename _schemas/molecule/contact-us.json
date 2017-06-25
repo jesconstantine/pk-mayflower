@@ -1,0 +1,49 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "title": "Contact Us",
+  "category": "molecule",
+  "type": "object",
+  "properties": {
+    "name": {
+      "description": "The name of the pattern, used to identify pattern files during validation",
+      "type": "string",
+      "default": "contact-us",
+      "options": {
+        "hidden": true
+      }
+    },
+    "contactUs": {
+      "type": "object",
+      "properties": {
+        "schemaSd": {
+          "type": "object",
+          "properties": {
+            "property": {
+              "type": "string",
+              "default": "containedInPlace"
+            },
+            "type": {
+              "type": "string",
+              "default": "CivicStructure"
+            }
+          },
+          "additionalProperties": false
+        },
+        "title": {
+          "$ref": "../atom/headings/column-heading.json#/properties/columnHeading"
+        },
+        "groups": {
+          "items": {
+            "$ref": "contact-group.json#/properties/contactGroup"
+          },
+          "type": "array",
+          "minItems": 1
+        }
+      },
+      "required": ["title", "groups"],
+      "additionalProperties": false
+    }
+  },
+  "required": ["contactUs"],
+  "additionalProperties": false
+}

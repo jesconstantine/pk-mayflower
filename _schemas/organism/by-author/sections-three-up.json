@@ -1,0 +1,36 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "title": "Sections Three Up",
+  "category": "organism",
+  "type": "object",
+  "properties": {
+    "name": {
+      "description": "The name of the pattern, used to identify pattern files during validation",
+      "type": "string",
+      "default": "sections-three-up",
+      "options": {
+        "hidden": true
+      }
+    },
+    "sectionThreeUp": {
+      "type": "object",
+      "properties": {
+        "compHeading":{
+          "$ref": "../../atom/headings/comp-heading.json#/properties/compHeading"
+        },
+        "sections": {
+          "items": {
+            "$ref": "../../molecule/section-links.json#/properties/sectionLinks"
+          },
+          "type": "array",
+          "minItems": 3,
+          "maxItems": 3
+        }
+      },
+      "required": ["sections"],
+      "additionalProperties": false
+    }
+  },
+  "required": ["sectionThreeUp"],
+  "additionalProperties": false
+}

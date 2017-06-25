@@ -1,0 +1,101 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "title": "Stacked Row Section",
+  "category": "organism",
+  "type": "object",
+  "properties": {
+    "name": {
+      "description": "The name of the pattern, used to identify pattern files during validation",
+      "type": "string",
+      "default": "stacked-row-section",
+      "options": {
+        "hidden": true
+      }
+    },
+    "stackedRowSection": {
+      "type": "object",
+      "properties": {
+        "title":{
+          "type": "string",
+          "default": "My Stacked Row Section"
+        },
+        "id":{
+          "type": "string",
+          "default": "my-stacked-row-section",
+          "description": "Corresponds to the id attribute of this html element."
+        },
+        "pageContent": {
+          "items": {
+            "type": "object",
+            "properties": {
+              "path": {
+                "enum": [
+                  "@organisms/by-author/rich-text.twig",
+                  "@organisms/by-author/action-finder.twig",
+                  "@organisms/by-author/location-listing.twig",
+                  "@organisms/by-author/sections-three-up.twig",
+                  "@organisms/by-author/link-list.twig",
+                  "@organisms/by-author/form-download.twig",
+                  "@organisms/by-author/callout-alert.twig",
+                  "@organisms/by-author/key-actions.twig",
+                  "@organisms/by-author/callout-time.twig",
+                  "@organisms/by-author/split-columns.twig"
+                ]
+              },
+              "data": {
+                "oneOf": [
+                  { "$ref": "../../organism/by-author/rich-text.json#" },
+                  { "$ref": "../../organism/by-author/action-finder.json#" },
+                  { "$ref": "../../organism/by-author/location-listing.json#" },
+                  { "$ref": "../../organism/by-author/sections-three-up.json#" },
+                  { "$ref": "../../organism/by-author/link-list.json#" },
+                  { "$ref": "../../organism/by-author/form-download.json#" },
+                  { "$ref": "../../organism/by-author/callout-alert.json#" },
+                  { "$ref": "../../organism/by-author/key-actions.json#" },
+                  { "$ref": "../../organism/by-author/callout-time.json#" },
+                  { "$ref": "../../organism/by-author/split-columns.json#" }
+                ]
+              }
+            }
+          },
+          "type": "array",
+          "minItems": 1
+        },
+        "sideBar": {
+          "items": {
+            "type": "object",
+            "properties": {
+              "path": {
+                "enum": [
+                  "@atoms/headings/sidebar-heading.twig",
+                  "@atoms/headings/colored-heading.twig",
+                  "@molecules/icon-links.twig",
+                  "@molecules/contact-us.twig",
+                  "@molecules/related-action.twig",
+                  "@organisms/by-author/link-list.twig",
+                  "@organisms/by-author/quick-actions.twig"
+                ]
+              },
+              "data": {
+                "oneOf": [
+                  { "$ref": "../../atom/headings/sidebar-heading.json#" },
+                  { "$ref": "../../atom/headings/colored-heading.json#" },
+                  { "$ref": "../../molecule/icon-links.json#" },
+                  { "$ref": "../../molecule/contact-us.json#" },
+                  { "$ref": "../../molecule/related-action.json#" },
+                  { "$ref": "../../organism/by-author/link-list.json#" },
+                  { "$ref": "../../organism/by-author/quick-actions.json#" }
+                ]
+              }
+            }
+          },
+          "type": "array"
+        }
+      },
+      "required": ["pageContent"],
+      "additionalProperties": false
+    }
+  },
+  "required": ["stackedRowSection"],
+  "additionalProperties": false
+}

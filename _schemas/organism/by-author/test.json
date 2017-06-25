@@ -1,0 +1,45 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#&#8221;",
+  "title": "OneOf Example",
+  "description": "This schema can choose properties or requirements based on certain value",
+  "type": "object",
+  "oneOf": [
+    {
+      "properties": {
+        "status": {
+          "description": "The status of the transaction",
+          "type": "string",
+          "enum": [
+            "Success"
+          ]
+        },
+        "statusDesc": {
+          "description": "The detailed description of status. Optional when Success",
+          "type": "string"
+        }
+      },
+      "required": [
+        "status"
+      ]
+    },
+    {
+      "properties": {
+        "status": {
+          "description": "The status of the transaction",
+          "type": "string",
+          "enum": [
+            "Error"
+          ]
+        },
+        "statusDesc": {
+          "description": "The detailed description of status. Required when Error",
+          "type": "string"
+        }
+      },
+      "required": [
+        "status",
+        "statusDesc"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,65 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "title": "Search Banner Form",
+  "category": "molecule",
+  "type": "object",
+  "properties": {
+    "name": {
+      "description": "The name of the pattern, used to identify pattern files during validation",
+      "type": "string",
+      "default": "search-banner-form",
+      "options": {
+        "hidden": true
+      }
+    },
+    "form": {
+      "type": "object",
+      "properties": {
+        "content": {
+          "type": "object",
+          "properties": {
+            "action": {
+              "type": "string",
+              "default": "#"
+            },
+            "buttonText": {
+              "type": "string",
+              "default": "Search"
+            },
+            "inputText": {
+              "type": "object",
+              "properties": {
+                "labelText": {
+                  "type": "string",
+                  "default": "Search"
+                },
+                "required": {
+                  "type": "boolean",
+                  "default": false
+                },
+                "id": {
+                  "type": "string",
+                  "default": "GUID138490237"
+                },
+                "name": {
+                  "type": "string",
+                  "default": "search"
+                },
+                "placeholder": {
+                  "type":"string",
+                  "default": "Search..."
+                }
+              },
+              "additionalProperties": false
+            }
+          },
+          "required": ["inputText", "buttonText"],
+          "additionalProperties": false
+        }
+      },
+      "additionalProperties": false
+    }
+  },
+  "required": ["form"],
+  "additionalProperties": false
+}

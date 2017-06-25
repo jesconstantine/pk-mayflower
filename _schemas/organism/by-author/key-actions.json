@@ -1,0 +1,41 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "title": "Key Actions",
+  "category": "organism",
+  "type": "object",
+  "properties": {
+    "name": {
+      "description": "The name of the pattern, used to identify pattern files during validation",
+      "type": "string",
+      "default": "key-actions",
+      "options": {
+        "hidden": true
+      }
+    },
+    "keyActions": {
+      "properties": {
+        "compHeading": {
+          "$ref": "../../atom/headings/comp-heading.json#/properties/compHeading"
+        },
+        "links": {
+          "items": {
+            "oneOf": [
+              {
+                "$ref": "../../molecule/illustrated-link.json#/properties/illustratedLink"
+              },
+              {
+                "$ref": "../../molecule/callout-link.json#/properties/calloutLink"
+              }
+            ]
+          },
+          "type": "array",
+          "minItems": 1
+        }
+      },
+      "required": ["compHeading", "links"],
+      "additionalProperties": false
+    }
+  },
+  "required": ["keyActions"],
+  "additionalProperties": false
+}

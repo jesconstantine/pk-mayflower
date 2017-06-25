@@ -1,0 +1,21 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "title": "Callout Link",
+  "category": "molecule",
+  "type": "object",
+  "properties": {
+    "name": {
+      "description": "The name of the pattern, used to identify pattern files during validation",
+      "type": "string",
+      "default": "callout-link",
+      "options": {
+        "hidden": true
+      }
+    },
+    "calloutLink": {
+      "$ref": "../atom/decorative-link.json#/definitions/link"
+    }
+  },
+  "required": ["calloutLink"],
+  "additionalProperties": false
+}

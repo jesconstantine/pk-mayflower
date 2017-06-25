@@ -1,0 +1,57 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "definitions": {
+    "sublist": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "properties": {
+          "text": {
+            "type": "string",
+            "format": "textarea"
+          }
+        },
+        "required": ["text"],
+        "additionalProperties": false
+      },
+      "additionalProperties": false
+    },
+    "listItem": {
+      "type": "object",
+      "properties": {
+        "text": {
+          "type": "string",
+          "format": "textarea"
+        },
+        "sublist": {
+          "$ref": "#/definitions/sublist"
+        }
+      },
+      "required": ["text"],
+      "additionalProperties": false
+    }
+  },
+  "title": "Unordered List",
+  "category": "atom",
+  "type": "object",
+  "properties": {
+    "name": {
+      "description": "The name of the pattern, used to identify pattern files during validation",
+      "type": "string",
+      "default": "unordered-list",
+      "options": {
+        "hidden": true
+      }
+    },
+    "unorderedList": {
+      "items": {
+        "$ref": "#/definitions/listItem"
+      },
+      "type": "array",
+      "minItems": 1
+    }
+  },
+  "required": ["unorderedList"],
+  "additionalProperties": false
+}

@@ -1,0 +1,29 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "title": "Action Steps",
+  "category": "organism",
+  "type": "object",
+  "properties": {
+    "name": {
+      "description": "The name of the pattern, used to identify pattern files during validation",
+      "type": "string",
+      "default": "action-steps",
+      "options": {
+        "hidden": true
+      }
+    },
+    "actionSteps": {
+      "properties": {
+        "steps": {
+          "items": {
+            "$ref": "../../molecule/action-step.json#/properties/actionStep"
+          },
+          "type": "array",
+          "minItems": 1
+        }
+      }
+    }
+  },
+  "required": ["actionSteps"],
+  "additionalProperties": false
+}

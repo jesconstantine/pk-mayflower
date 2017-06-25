@@ -1,0 +1,78 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "title": "Action Finder",
+  "category": "organism",
+  "type": "object",
+  "properties": {
+    "name": {
+      "description": "The name of the pattern, used to identify pattern files during validation",
+      "type": "string",
+      "default": "action-finder",
+      "options": {
+        "hidden": true
+      }
+    },
+    "actionFinder": {
+      "properties": {
+        "bgWide":{
+          "type": "string",
+          "default": "/assets/images/placeholder/1600x600-lighthouse-blur.jpg"
+        },
+        "bgNarrow": {
+          "type": "string",
+          "default": "/assets/images/placeholder/800x800.png"
+        },
+        "title": {
+          "type": "string",
+          "default": "What Would You Like to Do?"
+        },
+        "featuredHeading": {
+          "type": "string",
+          "default": "Featured:"
+        },
+        "generalHeading": {
+          "type": "string",
+          "default": "All Actions & Guides:"
+        },
+        "seeAll": {
+          "$ref": "../../atom/decorative-link.json#/properties/decorativeLink"
+        },
+        "featuredLinks": {
+          "items": {
+            "oneOf": [
+              {
+                "title": "illustrated link",
+                "$ref": "../../molecule/illustrated-link.json#/properties/illustratedLink"
+              },
+              {
+                "title": "callout link",
+                "$ref": "../../molecule/callout-link.json#/properties/calloutLink"
+              }
+            ]
+          },
+          "type": "array",
+          "maxItems": 6
+        },
+        "links": {
+          "items": {
+            "oneOf": [
+              {
+                "title": "illustrated link",
+                "$ref": "../../molecule/illustrated-link.json#/properties/illustratedLink"
+              },
+              {
+                "title": "callout link",
+                "$ref": "../../molecule/callout-link.json#/properties/calloutLink"
+              }
+            ]
+          },
+          "type": "array"
+        }
+      },
+      "required": ["bgWide", "title"],
+      "additionalProperties": false
+    }
+  },
+  "required": ["actionFinder"],
+  "additionalProperties": false
+}

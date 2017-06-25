@@ -1,0 +1,54 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "definitions": {
+    "slide": {
+      "type": "object",
+      "properties": {
+        "image":{
+          "type": "string",
+          "default": "/assets/images/placeholder/800x400.png"
+        },
+        "imageLarge": {
+          "type": "string",
+          "default": "/assets/images/placeholder/1600x400.png"
+        },
+        "alt": {
+          "type": "string",
+          "default": "view from the lodge"
+        }
+      },
+      "required": ["image", "imageLarge", "alt"],
+      "additionalProperties": false
+    }
+  },
+  "title": "Banner Carousel",
+  "category": "organism",
+  "type": "object",
+  "properties": {
+    "name": {
+      "description": "The name of the pattern, used to identify pattern files during validation",
+      "type": "string",
+      "default": "banner-carousel",
+      "options": {
+        "hidden": true
+      }
+    },
+    "bannerCarousel": {
+      "type": "object",
+      "properties": {
+        "slides": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/slide"
+          },
+          "minItems": 2,
+          "maxItems": 3
+        }
+      },
+      "required": ["slides"],
+      "additionalProperties": false
+    }
+  },
+  "required": ["bannerCarousel"],
+  "additionalProperties": false
+}

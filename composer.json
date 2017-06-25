@@ -1,0 +1,43 @@
+{
+    "name": "jesconstantine/pk-mayflower",
+    "type": "project",
+    "authors": [
+        {
+            "name": "Jes Constantine",
+            "email": "jesconstantine@gmail.com"
+        }
+    ],
+    "require": {
+        "jesconstantine/pattern-kit": "v1.2-alpha",
+        "php": ">=5.3.3",
+        "psr/log": "^1.0",
+        "twig/twig": "1.24.*",
+        "silex/silex": "=1.2.5",
+        "justinrainbow/json-schema": "~2.0",
+        "deralex/yaml-config-service-provider": "@dev",
+        "monolog/monolog": "~1.6",
+        "nesbot/Carbon": "~1.6",
+        "erusev/parsedown": "^1.6",
+        "mnapoli/front-yaml": "^1.5",
+        "symfony/twig-bridge": "^2.3",
+        "symfony/yaml": "=2.6.13"
+    },
+    "repositories": [
+        {
+            "type": "package",
+            "package": {
+                "name": "jesconstantine/pattern-kit",
+                "version": "v1.2-alpha",
+                "dist": {
+                    "url": "https://github.com/jesconstantine/pattern-kit/archive/V1.2-alpha.zip",
+                    "type": "zip"
+                }
+            }
+        }
+    ],
+    "autoload": {
+        "psr-0": {
+            "PatternKit\\": "vendor/jesconstantine/pattern-kit/src"
+        }
+    }
+}

@@ -1,0 +1,52 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "definitions": {
+    "waitTimeItem": {
+      "type": "object",
+      "properties": {
+        "label": {
+          "type": "string",
+          "enum": ["Licensing","Registration"]
+        },
+        "time": {
+          "type": "string",
+          "default": "15"
+        },
+        "units": {
+          "type": "string",
+          "default": "minutes"
+        }
+      },
+      "required": ["label","time","units"],
+      "additionalProperties": false
+    }
+  },
+  "title": "Wait Time",
+  "category": "molecule",
+  "type": "object",
+  "properties": {
+    "name": {
+      "description": "The name of the pattern, used to identify pattern files during validation",
+      "type": "string",
+      "default": "wait-time",
+      "options": {
+        "hidden": true
+      }
+    },
+    "waitTime": {
+      "type": "object",
+      "properties": {
+        "items": {
+          "items": {
+            "$ref": "#/definitions/waitTimeItem"
+          },
+          "type": "array",
+          "minItems": 1,
+          "maxItems": 2
+        }
+      }
+    }
+  },
+  "required": ["waitTime"],
+  "additionalProperties": false
+}

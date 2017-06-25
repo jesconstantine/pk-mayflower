@@ -1,0 +1,95 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "definitions": {
+    "imagePromo": {
+      "type": "object",
+      "properties": {
+        "title": {
+          "type": "object",
+          "properties": {
+            "text": {
+              "type": "string",
+              "default": "My Title"
+            },
+            "href": {
+              "type": "string",
+              "default": "http://www.mass.gov"
+            },
+            "type": {
+              "type": "string",
+              "default":  "external"
+            }
+          }
+        },
+        "image": {
+          "type": "object",
+          "properties": {
+            "image": {
+              "type": "string",
+              "default": "/assets/images/placeholder/190x107.png",
+              "description": "Path to image file"
+            },
+            "text": {
+              "type": "string",
+              "default": "My descriptive image alt text",
+              "description": "Descriptive, action-oriented text read aloud by screen readers"
+            },
+            "href": {
+              "type": "string",
+              "default": "http://www.mass.gov"
+            }
+          }
+        },
+        "description": {
+          "type": "object",
+          "properties": {
+            "property": {
+              "type": "string",
+              "description": "Schema.org stuff?"
+            },
+            "rteElements": {
+              "$ref": "../organism/by-author/rich-text.json#/properties/rteElements"
+            }
+          }
+        },
+        "link": {
+          "$ref": "../atom/decorative-link.json#/definitions/link"
+        },
+        "location": {
+          "type": "object",
+          "properties": {
+            "text": {
+              "type": "string",
+              "default": "",
+              "description": "Address to send map link to"
+            },
+            "map": {
+              "type": "boolean",
+              "default": false
+            }
+          }
+        }
+      },
+      "required": ["title", "description"],
+      "additionalProperties": false
+    }
+  },
+  "title": "Image Promo",
+  "category": "molecule",
+  "type": "object",
+  "properties": {
+    "name": {
+      "description": "The name of the pattern, used to identify pattern files during validation",
+      "type": "string",
+      "default": "image-promo",
+      "options": {
+        "hidden": true
+      }
+    },
+    "imagePromo": {
+      "$ref": "#/definitions/imagePromo"
+    }
+  },
+  "required": ["imagePromo"],
+  "additionalProperties": false
+}

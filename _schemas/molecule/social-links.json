@@ -1,0 +1,53 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "definitions": {
+    "socialLink": {
+      "type": "object",
+      "properties": {
+        "icon": {
+          "type": "string",
+          "enum": ["@atoms/icons/svg-twitter.twig", "@atoms/icons/svg-blog.twig", "@atoms/icons/svg-facebook.twig", "@atoms/icons/svg-linkedin.twig", "@atoms/icons/svg-flickr.twig", "@atoms/icons/svg-instagram.twig", "@atoms/icons/svg-youtube.twig" ]
+        },
+        "href": {
+          "type": "string",
+          "default": "#"
+        },
+        "altText": {
+          "type": "string",
+          "default": "Follow us on..."
+        }
+      },
+      "required": ["icon","altText","href"],
+      "additionalProperties": false
+    }
+  },
+  "title": "Social Links",
+  "category": "molecule",
+  "type": "object",
+  "properties": {
+    "name": {
+      "description": "The name of the pattern, used to identify pattern files during validation",
+      "type": "string",
+      "default": "social-links",
+      "options": {
+        "hidden": true
+      }
+    },
+    "socialLinks": {
+      "type": "object",
+      "properties": {
+        "items": {
+          "items": {
+            "$ref": "#definitions/socialLink"
+          },
+          "type": "array",
+          "minItems": 1
+        }
+      },
+      "required": ["items"],
+      "additionalProperties": false
+    }
+  },
+  "required": ["socialLinks"],
+  "additionalProperties": false
+}

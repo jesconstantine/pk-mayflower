@@ -1,0 +1,73 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "title": "Location Listing",
+  "category": "organism",
+  "type": "object",
+  "properties": {
+    "name": {
+      "description": "The name of the pattern, used to identify pattern files during validation",
+      "type": "string",
+      "default": "location-listing",
+      "options": {
+        "hidden": true
+      }
+    },
+    "locationListing": {
+      "type": "object",
+      "properties": {
+        "form": {
+          "type": "object",
+          "properties": {
+            "action": {
+              "type": "string",
+              "default": "#"
+            },
+            "inputs":{
+              "items": {
+                "type": "object",
+                "properties": {
+                  "path": {
+                    "type": "string",
+                    "enum": ["@molecules/field-submit.twig"]
+                  },
+                  "data": {
+                    "oneOf": [
+                      { "$ref": "../../molecule/field-submit.json#" }
+                    ]
+                  }
+                }
+              },
+              "type": "array",
+              "minItems": 1
+            }
+          },
+          "additionalProperties": false
+        },
+        "googleMap": {
+          "$ref": "../../molecule/google-map.json#/properties/googleMap"
+        },
+        "activeFilters": {
+          "type": "object",
+          "properties": {
+            "nearby": {
+              "type": "string",
+              "default": "02155"
+            }
+          },
+          "additionalProperties": false
+        },
+        "imagePromos": {
+          "items": {
+            "$ref": "../../molecule/image-promo.json#/properties/imagePromo"
+          },
+          "type": "array",
+          "minItems": 1
+        }
+      },
+      "required": ["form", "googleMap", "imagePromos"],
+      "additionalProperties": false
+    }
+  },
+  "required": ["locationListing"],
+  "additionalProperties": false
+}

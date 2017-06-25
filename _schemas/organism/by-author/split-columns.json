@@ -1,0 +1,121 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "definitions": {
+    "column": {
+      "type": "object",
+      "properties": {
+        "path": {
+          "type": "string",
+          "enum": [
+            "@base/placeholder.twig",
+            "@atoms/headings/column-heading.twig",
+            "@atoms/lists/unordered-list.twig",
+            "@organisms/by-author/rich-text.twig"
+          ]
+        },
+        "data": {
+          "oneOf": [
+            {
+              "title": "placeholder",
+              "type": "object",
+              "properties": {
+                "placeholder": {
+                  "type": "object",
+                  "properties": {
+                    "text": {
+                      "type": "string",
+                      "enum": [
+                        "%33",
+                        "%50"
+                      ]
+                    }
+                  },
+                  "required": [
+                    "text"
+                  ],
+                  "additionalProperties": false
+                }
+              }
+            },
+            {
+              "title": "column heading",
+              "type": "object",
+              "properties": {
+                "columnHeading": {
+                  "$ref": "../../atom/headings/column-heading.json#/properties/columnHeading"
+                }
+              }
+            },
+            {
+              "title": "unordered list",
+              "type": "object",
+              "properties": {
+                "unorderList": {
+                  "$ref": "../../atom/lists/unordered-list.json#/properties/unorderedList"
+                }
+              }
+            },
+            {
+              "title": "rich text elements",
+              "type": "object",
+              "properties": {
+                "rteElements": {
+                  "items": {
+                    "$ref": "rich-text.json#definitions/rteElement"
+                  },
+                  "type": "array",
+                  "minItems": 1
+                }
+              }
+            }
+          ]
+        }
+      },
+      "required": ["path", "data"],
+      "additionalProperties": false
+    }
+  },
+  "title": "Split Columns",
+  "category": "organism",
+  "type": "object",
+  "properties": {
+    "name": {
+      "description": "The name of the pattern, used to identify pattern files during validation",
+      "type": "string",
+      "default": "split-columns",
+      "options": {
+        "hidden": true
+      }
+    },
+    "splitColumns": {
+      "type": "object",
+      "properties": {
+        "column1": {
+          "items": {
+            "$ref": "#/definitions/column"
+          },
+          "type": "array",
+          "minItems": 1
+        },
+        "column2": {
+          "items": {
+            "$ref": "#/definitions/column"
+          },
+          "type": "array",
+          "minItems": 1
+        },
+        "column3": {
+          "items": {
+            "$ref": "#/definitions/column"
+          },
+          "type": "array",
+          "minItems": 1
+        }
+      },
+      "required": ["column1", "column2"],
+      "additionalProperties": false
+    }
+  },
+  "required": ["splitColumns"],
+  "additionalProperties": false
+}

@@ -1,0 +1,29 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "title": "Callout Time",
+  "category": "organism",
+  "type": "object",
+  "properties": {
+    "name": {
+      "description": "The name of the pattern, used to identify pattern files during validation",
+      "type": "string",
+      "default": "callout-time",
+      "options": {
+        "hidden": true
+      }
+    },
+    "calloutTime": {
+      "type": "object",
+      "properties": {
+        "text": {
+          "type": "string",
+          "default": "Testimonial from a client or quote from source that you want highlighted."
+        }
+      },
+      "required": ["text"],
+      "additionalProperties": false
+    }
+  },
+  "required": ["calloutTime"],
+  "additionalProperties": false
+}

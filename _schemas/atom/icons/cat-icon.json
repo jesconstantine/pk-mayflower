@@ -1,0 +1,105 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "definitions": {
+    "catIcon": {
+      "type": "object",
+      "properties": {
+        "icon": {
+          "description": "Path to the icon twig template.",
+          "type": "string",
+          "enum": [
+            "@atoms/icons/svg-alert.twig",
+            "@atoms/icons/svg-arrow.twig",
+            "@atoms/icons/svg-arrow-bent.twig",
+            "@atoms/icons/svg-blog.twig",
+            "@atoms/icons/svg-building.twig",
+            "@atoms/icons/svg-castle.twig",
+            "@atoms/icons/svg-circle-chevron.twig",
+            "@atoms/icons/svg-crossroads.twig",
+            "@atoms/icons/svg-doc-docx.twig",
+            "@atoms/icons/svg-doc-generic.twig",
+            "@atoms/icons/svg-doc-pdf.twig",
+            "@atoms/icons/svg-doc-xlsx.twig",
+            "@atoms/icons/svg-dog.twig",
+            "@atoms/icons/svg-external-link.twig",
+            "@atoms/icons/svg-facebook.twig",
+            "@atoms/icons/svg-fax-icon.twig",
+            "@atoms/icons/svg-flickr.twig",
+            "@atoms/icons/svg-instagram.twig",
+            "@atoms/icons/svg-laptop.twig",
+            "@atoms/icons/svg-lat-lon-globe.twig",
+            "@atoms/icons/svg-lg-apple.twig",
+            "@atoms/icons/svg-lg-bag-search.twig",
+            "@atoms/icons/svg-lg-binders.twig",
+            "@atoms/icons/svg-lg-bookshelf.twig",
+            "@atoms/icons/svg-lg-clipboard.twig",
+            "@atoms/icons/svg-lg-family.twig",
+            "@atoms/icons/svg-lg-fishing.twig",
+            "@atoms/icons/svg-lg-governor-desk.twig",
+            "@atoms/icons/svg-lg-govt-buliding.twig",
+            "@atoms/icons/svg-lg-hard-hat.twig",
+            "@atoms/icons/svg-lg-home.twig",
+            "@atoms/icons/svg-lg-houses.twig",
+            "@atoms/icons/svg-lg-laptop.twig",
+            "@atoms/icons/svg-lg-license.twig",
+            "@atoms/icons/svg-lg-list.twig",
+            "@atoms/icons/svg-lg-map-location.twig",
+            "@atoms/icons/svg-lg-open-book.twig",
+            "@atoms/icons/svg-lg-park.twig",
+            "@atoms/icons/svg-lg-picnic-table.twig",
+            "@atoms/icons/svg-lg-scales.twig",
+            "@atoms/icons/svg-lg-school.twig",
+            "@atoms/icons/svg-lg-scroll.twig",
+            "@atoms/icons/svg-lg-shield.twig",
+            "@atoms/icons/svg-lg-state-building.twig",
+            "@atoms/icons/svg-lg-state-house.twig",
+            "@atoms/icons/svg-lg-toy-blocks.twig",
+            "@atoms/icons/svg-lg-transportation.twig",
+            "@atoms/icons/svg-lg-tree.twig",
+            "@atoms/icons/svg-linkedin.twig",
+            "@atoms/icons/svg-login.twig",
+            "@atoms/icons/svg-mail.twig",
+            "@atoms/icons/svg-marker.twig",
+            "@atoms/icons/svg-page-test.twig",
+            "@atoms/icons/svg-phone.twig",
+            "@atoms/icons/svg-profile.twig",
+            "@atoms/icons/svg-quote.twig",
+            "@atoms/icons/svg-restore.twig",
+            "@atoms/icons/svg-search.twig",
+            "@atoms/icons/svg-settings.twig",
+            "@atoms/icons/svg-transit.twig",
+            "@atoms/icons/svg-twitter.twig",
+            "@atoms/icons/svg-user-test.twig",
+            "@atoms/icons/svg-wait-time.twig",
+            "@atoms/icons/svg-wheelchair.twig",
+            "@atoms/icons/svg-youtube.twig"
+          ]
+        },
+        "small": {
+          "type": "string",
+          "enum": ["false","true"]
+        }
+      },
+      "required": ["icon"],
+      "additionalProperties": false
+    }
+  },
+  "title": "Category Icon",
+  "category": "atom",
+  "type": "object",
+  "properties": {
+    "name": {
+      "description": "The name of the pattern, used to identify pattern files during validation",
+      "type": "string",
+      "default": "cat-icon",
+      "options": {
+        "hidden": true
+      }
+    },
+    "catIcon": {
+      "$ref": "#/definitions/catIcon"
+    }
+  },
+  "required": ["catIcon"],
+  "additionalProperties": false
+}

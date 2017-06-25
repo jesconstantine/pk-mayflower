@@ -1,0 +1,92 @@
+title: Mayflower
+
+paths:  # relative to your pattern library root
+  data:
+    - _data
+    - _patterns/atom
+    - _patterns/atom/buttons
+    - _patterns/atom/forms
+    - _patterns/atom/headings
+    - _patterns/atom/icons
+    - _patterns/atom/lists
+    - _patterns/atom/media
+    - _patterns/atom/text
+    - _patterns/molecule
+    - _patterns/organism
+    - _patterns/organism/by-author
+    - _patterns/template
+  test_data:
+    - _patterns
+  schemas:
+    - _schemas/atom
+    - _schemas/atom/buttons
+    - _schemas/atom/forms
+    - _schemas/atom/headings
+    - _schemas/atom/icons
+    - _schemas/atom/lists
+    - _schemas/atom/media
+    - _schemas/atom/text
+    - _schemas/molecule
+    - _schemas/organism
+    - _schemas/organism/by-author
+    - _schemas/organism/by-template
+    - _schemas/template
+  templates:
+    - _patterns/atom
+    - _patterns/atom/buttons
+    - _patterns/atom/forms
+    - _patterns/atom/icons
+    - _patterns/atom/headings
+    - _patterns/atom/icons
+    - _patterns/atom/lists
+    - _patterns/atom/media
+    - _patterns/atom/text
+    - _patterns/molecule
+    - _patterns/organism
+    - _patterns/organism/by-author
+    - _patterns/organism/by-template
+    - _patterns/template
+  docs:
+    - _patterns/atom
+    - _patterns/atom/buttons
+    - _patterns/atom/forms
+    - _patterns/atom/headings
+    - _patterns/atom/icons
+    - _patterns/atom/lists
+    - _patterns/atom/media
+    - _patterns/atom/text
+    - _patterns/molecule
+    - _patterns/organism
+    - _patterns/organism/by-author
+    - _patterns/organism/by-template
+    - _patterns/template
+  sg:
+    - _docs
+extensions:
+  data: .json
+  test_data: .json
+  schemas: .json
+  templates: .twig
+  docs: .md
+  sg: .sg.md
+categories:
+    - atom
+    - molecule
+    - organism
+    - template
+namespaces:
+  base: _patterns/base
+  atoms: _patterns/atom
+  molecules: _patterns/molecule
+  organisms: _patterns/organism
+  templates: _patterns/template
+assets:
+  css:
+    - /assets/css/index-generated.css
+    - /assets/css/base-theme-generated.css
+    - /assets/css/pilot-generated.css
+  js:
+    - /assets/js/env.js
+  footer_js:
+    - /assets/js/vendor-generated.js
+    - /assets/js/index-generated.js

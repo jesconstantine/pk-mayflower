@@ -1,0 +1,42 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "definitions": {
+    "figure": {
+      "type": "object",
+      "properties": {
+        "align": {
+          "type": "string",
+          "enum": ["left","right",""]
+        },
+        "image": {
+          "$ref": "image.json#/definitions/image"
+        },
+        "caption": {
+          "type": "string",
+          "format": "textarea",
+          "default": "My image caption."
+        }
+      },
+      "required": ["image","caption"],
+      "additionalProperties": false
+    }
+  },
+  "title": "Figure",
+  "category": "atom",
+  "type": "object",
+  "properties": {
+    "name": {
+      "description": "The name of the pattern, used to identify pattern files during validation",
+      "type": "string",
+      "default": "figure",
+      "options": {
+        "hidden": true
+      }
+    },
+    "figure": {
+      "$ref": "#/definitions/figure"
+    }
+  },
+  "required": ["figure"],
+  "additionalProperties": false
+}

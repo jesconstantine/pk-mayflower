@@ -1,0 +1,66 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "title": "Contact Group",
+  "category": "molecule",
+  "type": "object",
+  "properties": {
+    "name": {
+      "description": "The name of the pattern, used to identify pattern files during validation",
+      "type": "string",
+      "default": "contact-group",
+      "options": {
+        "hidden": true
+      }
+    },
+    "contactGroup": {
+      "type": "object",
+      "properties": {
+        "icon": {
+          "type": "string",
+          "enum": ["@atoms/icons/svg-phone.twig", "@atoms/icons/svg-mail.twig", "@atoms/icons/svg-fax.twig", "@atoms/icons/svg-laptop.twig" ]
+        },
+        "name": {
+          "type": "string",
+          "enum": ["Phone", "Online", "Fax", "Address"]
+        },
+        "items": {
+          "items": {
+            "type": "object",
+            "properties": {
+              "type": {
+                "type": "string",
+                "enum": ["phone", "online", "fax", "address"]
+              },
+              "property": {
+                "type": "string",
+                "enum": "telephone"
+              },
+              "label": {
+                "type": "string",
+                "default": "Main:"
+              },
+              "value": {
+                "type": "string",
+                "default": "(413) 499-4262"
+              },
+              "link": {
+                "type": "string",
+                "default": "14134994262"
+              },
+              "details": {
+                "type": "string",
+                "default": "This line is open from 9:00 a.m. - 5:00 p.m., M-F"
+              }
+            },
+            "required": ["type","value"],
+            "additionalProperties": false
+          },
+          "type": "array",
+          "minItems": 1
+        }
+      }
+    }
+  },
+  "required": ["contactGroup"],
+  "additionalProperties": false
+}

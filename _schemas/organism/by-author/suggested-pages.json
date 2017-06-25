@@ -1,0 +1,39 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "title": "Suggested Pages",
+  "category": "organism",
+  "type": "object",
+  "properties": {
+    "name": {
+      "description": "The name of the pattern, used to identify pattern files during validation",
+      "type": "string",
+      "default": "suggested-pages",
+      "options": {
+        "hidden": true
+      }
+    },
+    "suggestedPages": {
+      "type": "object",
+      "properties": {
+        "title":{
+          "type": "string",
+          "default": "Suggested Pages"
+        },
+        "buttonMinor":{
+          "$ref": "../../atom/buttons/button-link2.json#/properties/buttonMinor"
+        },
+        "pages": {
+          "items": {
+            "$ref": "../../molecule/illustrated-link.json#/properties/illustratedLink"
+          },
+          "type": "array",
+          "minItems": 1
+        }
+      },
+      "required": ["pages"],
+      "additionalProperties": false
+    }
+  },
+  "required": ["suggestedPages"],
+  "additionalProperties": false
+}

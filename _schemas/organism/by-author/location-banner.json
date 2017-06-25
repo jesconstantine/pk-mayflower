@@ -1,0 +1,40 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "title": "Location Banner",
+  "category": "organism",
+  "type": "object",
+  "properties": {
+    "name": {
+      "description": "The name of the pattern, used to identify pattern files during validation",
+      "type": "string",
+      "default": "location-banner",
+      "options": {
+        "hidden": true
+      }
+    },
+    "locationBanner": {
+      "type": "object",
+      "properties": {
+        "title": {
+          "type": "string",
+          "default": "view from the lodge"
+        },
+        "bgNarrow":{
+          "type": "string",
+          "default": "/assets/images/placeholder/800x400.png"
+        },
+        "bgWide": {
+          "type": "string",
+          "default": "/assets/images/placeholder/1600x400.png"
+        },
+        "actionMap": {
+          "$ref": "../../molecule/google-map.json#/properties/googleMap"
+        }
+      },
+      "required": ["bgWide", "bgNarrow", "title", "actionMap"],
+      "additionalProperties": false
+    }
+  },
+  "required": ["locationBanner"],
+  "additionalProperties": false
+}

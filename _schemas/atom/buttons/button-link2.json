@@ -1,0 +1,21 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "title": "Minor Button Link",
+  "category": "atom",
+  "type": "object",
+  "properties": {
+    "name": {
+      "description": "The name of the pattern, used to identify pattern files during validation",
+      "type": "string",
+      "default": "button-link2",
+      "options": {
+        "hidden": true
+      }
+    },
+    "buttonMinor": {
+      "$ref": "button-link.json#/definitions/button"
+    }
+  },
+  "required": ["buttonMinor"],
+  "additionalProperties": false
+}

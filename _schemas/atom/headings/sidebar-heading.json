@@ -1,0 +1,29 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "title": "Sidebar Heading",
+  "category": "atom",
+  "type": "object",
+  "properties": {
+    "name": {
+      "description": "The name of the pattern, used to identify pattern files during validation",
+      "type": "string",
+      "default": "sidebar-heading",
+      "options": {
+        "hidden": true
+      }
+    },
+    "sidebarHeading": {
+      "type": "object",
+      "properties": {
+        "title": {
+          "type": "string",
+          "default": "My Heading"
+        }
+      },
+      "required": ["title"],
+      "additionalProperties": false
+    }
+  },
+  "required": ["sidebarHeading"],
+  "additionalProperties": false
+}

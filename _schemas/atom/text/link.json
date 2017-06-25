@@ -1,0 +1,49 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "definitions": {
+    "link": {
+      "type": "object",
+      "properties": {
+        "href": {
+          "type": "string",
+          "default": "http://www.mass.gov",
+          "description": "The URL for the link target"
+        },
+        "text": {
+          "type": "string",
+          "default": "My link",
+          "description": "The hyperlinked text"
+        },
+        "chevron": {
+          "type": "boolean",
+          "default": true
+        },
+        "property": {
+          "type": "string",
+          "default": "",
+          "description": "Something having to do with schema.org?"
+        }
+      },
+      "required": ["href", "text"],
+      "additionalProperties": false
+    }
+  },
+  "title": "Link",
+  "category": "atom",
+  "type": "object",
+  "properties": {
+    "name": {
+      "description": "The name of the pattern, used to identify pattern files during validation",
+      "type": "string",
+      "default": "link",
+      "options": {
+        "hidden": true
+      }
+    },
+    "link": {
+      "$ref": "#/definitions/link"
+    }
+  },
+  "required": ["link"],
+  "additionalProperties": false
+}

@@ -1,0 +1,68 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "definitions": {
+    "rteElement": {
+      "type": "object",
+      "properties": {
+        "path": {
+          "enum": [
+            "@atoms/text/paragraph.twig",
+            "@atoms/headings/comp-heading.twig",
+            "@atoms/text/raw-html.twig",
+            "@atoms/lists/ordered-list.twig",
+            "@atoms/lists/unordered-list.twig",
+            "@atoms/media/figure.twig",
+            "@atoms/media/image.twig",
+            "@molecules/callout-link.twig",
+            "@molecules/callout-stats.twig",
+            "@molecules/google-map.twig",
+            "@organisms/by-author/callout.twig",
+            "@organisms/by-author/callout-alert.twig",
+            "@organisms/by-author/callout-time.twig"
+          ]
+        },
+        "data": {
+          "oneOf": [
+            { "$ref": "../../atom/text/paragraph.json#" },
+            { "$ref": "../../atom/headings/comp-heading.json#" },
+            { "$ref": "../../atom/text/raw-html.json#" },
+            { "$ref": "../../atom/lists/ordered-list.json#" },
+            { "$ref": "../../atom/lists/unordered-list.json#" },
+            { "$ref": "../../atom/media/figure.json#" },
+            { "$ref": "../../atom/media/image.json#" },
+            { "$ref": "../../molecule/callout-link.json#" },
+            { "$ref": "../../molecule/callout-stats.json#" },
+            { "$ref": "../../molecule/google-map.json#" },
+            { "$ref": "../../organism/by-author/callout.json#" },
+            { "$ref": "../../organism/by-author/callout-alert.json#" },
+            { "$ref": "../../organism/by-author/callout-time.json#" }
+          ]
+        }
+      },
+      "required": ["path", "data"],
+      "additionalProperties": false
+    }
+  },
+  "title": "Rich Text",
+  "category": "organism",
+  "type": "object",
+  "properties": {
+    "name": {
+      "description": "The name of the pattern, used to identify pattern files during validation",
+      "type": "string",
+      "default": "rich-text",
+      "options": {
+        "hidden": true
+      }
+    },
+    "rteElements": {
+      "items": {
+        "$ref": "#definitions/rteElement"
+      },
+      "type": "array",
+      "minItems": 1
+    }
+  },
+  "required": ["rteElements"],
+  "additionalProperties": false
+}

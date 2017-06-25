@@ -1,0 +1,38 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "definitions": {
+    "checklistItem": {
+      "type": "object",
+      "properties": {
+        "text": {
+          "type": "string",
+          "format": "textarea"
+        }
+      },
+      "required": ["text"],
+      "additionalProperties": false
+    }
+  },
+  "title": "Check List",
+  "category": "atom",
+  "type": "object",
+  "properties": {
+    "name": {
+      "description": "The name of the pattern, used to identify pattern files during validation",
+      "type": "string",
+      "default": "checklist",
+      "options": {
+        "hidden": true
+      }
+    },
+    "checkList": {
+      "items": {
+        "$ref": "#/definitions/checklistItem"
+      },
+      "type": "array",
+      "minItems": 1
+    }
+  },
+  "required": ["checkList"],
+  "additionalProperties": false
+}

@@ -1,0 +1,36 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "title": "Emergency Alert",
+  "category": "molecule",
+  "type": "object",
+  "properties": {
+    "name": {
+      "description": "The name of the pattern, used to identify pattern files during validation",
+      "type": "string",
+      "default": "emergency-alert",
+      "options": {
+        "hidden": true
+      }
+    },
+    "emergencyAlert": {
+      "type": "object",
+      "properties": {
+        "message": {
+          "type": "string",
+          "default": "MassPort is operating with limited flights due to road closures."
+        },
+        "timeStamp": {
+          "type": "string",
+          "default": "02.15.16, 5:00 p.m."
+        },
+        "link": {
+          "$ref": "../atom/text/link.json#/definitions/link"
+        }
+      },
+      "required": ["message","timeStamp"],
+      "additionalProperties": false
+    }
+  },
+  "required": ["emergencyAlert"],
+  "additionalProperties": false
+}

@@ -1,0 +1,31 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "title": "Related Action",
+  "category": "molecule",
+  "type": "object",
+  "properties": {
+    "name": {
+      "description": "The name of the pattern, used to identify pattern files during validation",
+      "type": "string",
+      "default": "related-action",
+      "options": {
+        "hidden": true
+      }
+    },
+    "relatedAction": {
+      "type": "object",
+      "properties": {
+        "link": {
+          "$ref": "../atom/decorative-link.json#/definitions/link"
+        },
+        "description": {
+          "type": "string",
+          "default": "Purchase a MassParks Pass as a gift for holidays, birthdays, and anniversaries, or just to a put a smile on someone's face."
+        }
+      },
+      "required": ["link", "description"]
+    }
+  },
+  "required": ["relatedAction"],
+  "additionalProperties": false
+}

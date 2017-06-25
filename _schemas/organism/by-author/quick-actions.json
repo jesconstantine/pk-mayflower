@@ -1,0 +1,38 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "title": "Quick Actions",
+  "category": "organism",
+  "type": "object",
+  "properties": {
+    "name": {
+      "description": "The name of the pattern, used to identify pattern files during validation",
+      "type": "string",
+      "default": "quick-actions",
+      "options": {
+        "hidden": true
+      }
+    },
+    "quickActions": {
+      "properties": {
+        "coloredHeading": {
+          "$ref": "../../atom/headings/colored-heading.json#/properties/coloredHeading"
+        },
+        "sidebarHeading": {
+          "$ref": "../../atom/headings/sidebar-heading.json#/properties/sidebarHeading"
+        },
+        "links": {
+          "items": {
+            "$ref": "../../atom/decorative-link.json#/properties/decorativeLink"
+          },
+          "type": "array",
+          "minItems": 1,
+          "maxItems": 5
+        }
+      },
+      "required": ["links"],
+      "additionalProperties": false
+    }
+  },
+  "required": ["quickActions"],
+  "additionalProperties": false
+}

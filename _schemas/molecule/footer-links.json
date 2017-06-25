@@ -1,0 +1,64 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "definitions": {
+    "footerLink": {
+      "type": "object",
+      "properties": {
+        "heading": {
+          "type": "string",
+          "default": "Footer Links 1"
+        },
+        "links": {
+          "items": {
+            "type": "object",
+            "properties": {
+              "href": {
+                "type": "string",
+                "default": "#"
+              },
+              "text": {
+                "type": "string",
+                "default": "Living"
+              }
+            },
+            "required": ["href","text"],
+            "additionalProperties": false
+          },
+          "type": "array",
+          "minItems": 1
+        }
+      },
+      "required": ["heading","links"],
+      "additionalProperties": false
+    }
+  },
+  "title": "Footer Links",
+  "category": "molecule",
+  "type": "object",
+  "properties": {
+    "name": {
+      "description": "The name of the pattern, used to identify pattern files during validation",
+      "type": "string",
+      "default": "footer-links",
+      "options": {
+        "hidden": true
+      }
+    },
+    "footerLinks": {
+      "type": "object",
+      "properties": {
+        "items": {
+          "items": {
+            "$ref": "#definitions/footerLink"
+          },
+          "type": "array",
+          "minItems": 1
+        }
+      },
+      "required": ["items"],
+      "additionalProperties": false
+    }
+  },
+  "required": ["footerLinks"],
+  "additionalProperties": false
+}

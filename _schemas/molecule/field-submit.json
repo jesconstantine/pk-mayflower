@@ -1,0 +1,60 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "title": "Field Submit",
+  "category": "molecule",
+  "type": "object",
+  "properties": {
+    "name": {
+      "description": "The name of the pattern, used to identify pattern files during validation",
+      "type": "string",
+      "default": "field-submit",
+      "options": {
+        "hidden": true
+      }
+    },
+    "fieldSubmit": {
+      "type": "object",
+      "properties": {
+        "inputText": {
+          "type": "object",
+          "properties": {
+            "labelText": {
+              "type": "string",
+              "default": "Filter by city, town or zipcode"
+            },
+            "required": {
+              "type": "boolean",
+              "default": false
+            },
+            "id": {
+              "type": "string",
+              "default": "filter-by-location"
+            },
+            "name": {
+              "type": "string",
+              "default": "filter-by-location"
+            },
+            "placeholder": {
+              "type":"string"
+            }
+          },
+          "additionalProperties": false
+        },
+        "buttonSearch": {
+          "type": "object",
+          "properties": {
+            "text": {
+              "type": "string",
+              "default": "Update"
+            }
+          },
+          "additionalProperties": false
+        }
+      },
+      "required": ["inputText", "buttonSearch"],
+      "additionalProperties": false
+    }
+  },
+  "required": ["fieldSubmit"],
+  "additionalProperties": false
+}

@@ -1,0 +1,39 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "title": "Helpful Links",
+  "category": "organism",
+  "type": "object",
+  "properties": {
+    "name": {
+      "description": "The name of the pattern, used to identify pattern files during validation",
+      "type": "string",
+      "default": "helpful-links",
+      "options": {
+        "hidden": true
+      }
+    },
+    "helpfulLinks": {
+      "type": "object",
+      "properties": {
+        "columns": {
+          "type": "string",
+          "enum": ["","true"]
+        },
+        "compHeading": {
+          "$ref": "../../atom/headings/comp-heading.json#/properties/compHeading"
+        },
+        "items": {
+          "items": {
+            "$ref": "../../atom/text/link.json#/properties/link"
+          },
+          "type": "array",
+          "minItems": 1
+        }
+      },
+      "required": ["compHeading","items"],
+      "additionalProperties": false
+    }
+  },
+  "required": ["helpfulLinks"],
+  "additionalProperties": false
+}

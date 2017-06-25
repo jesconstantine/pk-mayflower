@@ -1,0 +1,35 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "title": "Button Alert",
+  "category": "molecule",
+  "type": "object",
+  "properties": {
+    "name": {
+      "description": "The name of the pattern, used to identify pattern files during validation",
+      "type": "string",
+      "default": "button-alert",
+      "options": {
+        "hidden": true
+      }
+    },
+    "buttonAlert": {
+      "type": "object",
+      "properties": {
+        "hideText": {
+          "type": "string",
+          "default": "Hide"
+        },
+        "showText": {
+          "type": "string",
+          "default": "Show"
+        },
+        "text": {
+          "type": "string",
+          "default": "Updates"
+        }
+      }
+    }
+  },
+  "required": ["buttonAlert"],
+  "additionalProperties": false
+}

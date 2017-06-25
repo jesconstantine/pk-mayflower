@@ -1,0 +1,24 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "title": "Form Download",
+  "category": "organism",
+  "type": "object",
+  "properties": {
+    "name": {
+      "description": "The name of the pattern, used to identify pattern files during validation",
+      "type": "string",
+      "default": "form-download",
+      "options": {
+        "hidden": true
+      }
+    },
+    "compHeading": {
+      "$ref": "../../atom/headings/comp-heading.json#/properties/compHeading"
+    },
+    "actionDownloads": {
+      "$ref": "../../molecule/action-downloads.json#/properties/actionDownloads"
+    }
+  },
+  "required": ["compHeading","actionDownloads"],
+  "additionalProperties": false
+}

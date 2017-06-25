@@ -1,0 +1,65 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "title": "Search Banner",
+  "category": "organism",
+  "type": "object",
+  "properties": {
+    "name": {
+      "description": "The name of the pattern, used to identify pattern files during validation",
+      "type": "string",
+      "default": "search-banner",
+      "options": {
+        "hidden": true
+      }
+    },
+    "searchBanner": {
+      "type": "object",
+      "properties": {
+        "bgNarrow":{
+          "type": "string",
+          "default": "/assets/images/placeholder/800x800.png"
+        },
+        "bgWide": {
+          "type": "string",
+          "default": "/assets/images/placeholder/1600x800.png"
+        },
+        "imageName": {
+          "type": "string",
+          "default": "MIT Lab"
+        },
+        "imageAuthor": {
+          "type": "string",
+          "default": "Sir Mix a Lot"
+        },
+        "form": {
+          "type": "object",
+          "properties": {
+            "path": {
+              "type": "string",
+              "enum": ["@molecules/search-banner-form.twig"]
+            },
+            "content": {
+              "$ref": "../../molecule/search-banner-form.json#/properties/form/properties/content"
+            }
+          },
+          "additionalProperties": false
+        },
+        "title": {
+          "type": "string",
+          "default": "Welcome to Massachusetts"
+        },
+        "intro": {
+          "type": "string",
+          "default": "What would you like to do?"
+        },
+        "helpfulLinks": {
+          "$ref": "helpful-links.json#/properties/helpfulLinks"
+        }
+      },
+      "required": ["bgWide", "bgNarrow", "imageName", "imageAuthor", "form", "title", "intro", "helpfulLinks"],
+      "additionalProperties": false
+    }
+  },
+  "required": ["searchBanner"],
+  "additionalProperties": false
+}

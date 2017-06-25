@@ -1,0 +1,21 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "title": "Callout Alert",
+  "category": "organism",
+  "type": "object",
+  "properties": {
+    "name": {
+      "description": "The name of the pattern, used to identify pattern files during validation",
+      "type": "string",
+      "default": "callout-alert",
+      "options": {
+        "hidden": true
+      }
+    },
+    "calloutAlert": {
+      "$ref": "../../atom/decorative-link.json#"
+    }
+  },
+  "required": ["calloutAlert"],
+  "additionalProperties": false
+}

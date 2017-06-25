@@ -1,0 +1,27 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "title": "Column Heading",
+  "category": "atom",
+  "type": "object",
+  "properties": {
+    "name": {
+      "description": "The name of the pattern, used to identify pattern files during validation",
+      "type": "string",
+      "default": "column-heading",
+      "options": {
+        "hidden": true
+      }
+    },
+    "columnHeading": {
+      "properties": {
+        "text": {
+          "type": "string",
+          "default": "My Heading"
+        }
+      },
+      "additionalProperties": false
+    }
+  },
+  "required": ["columnHeading"],
+  "additionalProperties": false
+}

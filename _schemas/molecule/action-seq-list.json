@@ -1,0 +1,34 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "title": "Action Sequential List",
+  "category": "molecule",
+  "type": "object",
+  "properties": {
+    "name": {
+      "description": "The name of the pattern, used to identify pattern files during validation",
+      "type": "string",
+      "default": "action-seq-list",
+      "options": {
+        "hidden": true
+      }
+    },
+    "actionSeqLists": {
+      "items": {
+        "type": "object",
+        "properties": {
+          "title": {
+            "type": "string",
+            "default": "My Step"
+          },
+          "rteElements": {
+            "$ref": "../organism/by-author/rich-text.json#/properties/rteElements"
+          }
+        }
+      },
+      "type": "array",
+      "minItems": 2
+    }
+  },
+  "required": ["actionSeqLists"],
+  "additionalProperties": false
+}

@@ -1,0 +1,37 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "title": "Sidebar Contact",
+  "category": "organism",
+  "type": "object",
+  "properties": {
+    "name": {
+      "description": "The name of the pattern, used to identify pattern files during validation",
+      "type": "string",
+      "default": "sidebar-contact",
+      "options": {
+        "hidden": true
+      }
+    },
+    "sidebarContact": {
+      "type": "object",
+      "properties": {
+        "coloredHeading": {
+          "$ref": "../../atom/headings/colored-heading.json#/properties/coloredHeading"
+        },
+        "items": {
+          "items": {
+            "$ref": "../../molecule/contact-us.json#"
+          },
+          "type": "array",
+          "minItems": 1
+        },
+        "required": ["items"],
+        "additionalProperties": false
+      },
+      "required": ["coloredHeading", "items"],
+      "additionalProperties": false
+    }
+  },
+  "required": ["sidebarContact"],
+  "additionalProperties": false
+}

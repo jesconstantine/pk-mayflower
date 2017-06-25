@@ -1,0 +1,74 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "title": "Action Details",
+  "category": "organism",
+  "type": "object",
+  "properties": {
+    "name": {
+      "description": "The name of the pattern, used to identify pattern files during validation",
+      "type": "string",
+      "default": "action-details",
+      "options": {
+        "hidden": true
+      }
+    },
+    "actionDetails": {
+      "properties": {
+        "sections": {
+          "items": {
+            "type": "object",
+            "properties": {
+              "title": {
+                "type": "string",
+                "default": "Overview",
+                "description": "section heading"
+              },
+              "intro": {
+                "type": "string",
+                "default": "",
+                "description": "text that appears..."
+              },
+              "id": {
+                "type": "string",
+                "default": "overview",
+                "description": "used for the subnav anchor links"
+              },
+              "path": {
+                "type": "string",
+                "enum": [
+                  "@molecules/action-activities.twig",
+                  "@molecules/action-downloads.twig",
+                  "@molecules/action-event.twig",
+                  "@molecules/action-gallery.twig",
+                  "@molecules/google-map.twig",
+                  "@molecules/action-seq-list.twig",
+                  "@organisms/by-author/action-steps.twig",
+                  "@organisms/by-author/rich-text.twig"
+
+                ]
+              },
+              "data": {
+                "oneOf": [
+                  { "$ref": "../../molecule/action-activities.json#" },
+                  { "$ref": "../../molecule/action-downloads.json#" },
+                  { "$ref": "../../molecule/action-event.json#" },
+                  { "$ref": "../../molecule/action-gallery.json#" },
+                  { "$ref": "../../molecule/google-map.json#" },
+                  { "$ref": "../../molecule/action-seq-list.json#" },
+                  { "$ref": "../../organism/by-author/action-steps.json#" },
+                  { "$ref": "../../organism/by-author/rich-text.json#" }
+                ]
+              }
+            },
+            "required": ["title", "id", "path", "data"],
+            "additionalProperties": false
+          },
+          "type": "array",
+          "minItems": 1
+        }
+      }
+    }
+  },
+  "required": ["actionDetails"],
+  "additionalProperties": false
+}

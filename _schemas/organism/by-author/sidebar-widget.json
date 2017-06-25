@@ -1,0 +1,65 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "definitions": {
+    "widget": {
+      "type": "object",
+      "properties": {
+        "path": {
+          "type": "string",
+          "enum": [
+            "@molecules/action-event.twig",
+            "@molecules/related-action.twig"
+          ]
+        },
+        "data": {
+          "oneOf": [
+            {
+              "$ref": "../../molecule/action-event.json#"
+            },
+            {
+              "$ref": "../../molecule/related-action.json#"
+            }
+          ]
+        }
+      },
+      "required": ["path", "data"],
+      "additionalProperties": false
+    }
+  },
+  "title": "Sidebar Widget",
+  "category": "organism",
+  "type": "object",
+  "properties": {
+    "name": {
+      "description": "The name of the pattern, used to identify pattern files during validation",
+      "type": "string",
+      "default": "sidebar-widget",
+      "options": {
+        "hidden": true
+      }
+    },
+    "sidebarWidget": {
+      "type": "object",
+      "properties": {
+        "coloredHeading": {
+          "$ref": "../../atom/headings/colored-heading.json#/properties/coloredHeading"
+        },
+        "items": {
+          "items": {
+            "$ref": "#/definitions/widget"
+          },
+          "type": "array",
+          "minItems": 1
+        },
+        "more": {
+          "type": "string",
+          "default": "more"
+        }
+      },
+      "required": ["coloredHeading", "items"],
+      "additionalProperties": false
+    }
+  },
+  "required": ["sidebarWidget"],
+  "additionalProperties": false
+}

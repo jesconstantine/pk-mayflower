@@ -1,0 +1,64 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "definitions": {
+    "iconLink": {
+      "type": "object",
+      "properties": {
+        "icon": {
+          "type": "string",
+          "enum": ["@atoms/icons/svg-twitter.twig", "@atoms/icons/svg-blog.twig", "@atoms/icons/svg-facebook.twig", "@atoms/icons/svg-linkedin.twig", "@atoms/icons/svg-flickr.twig", "@atoms/icons/svg-instagram.twig", "@atoms/icons/svg-youtube.twig" ]
+        },
+        "link": {
+          "type": "object",
+          "properties": {
+            "href": {
+              "type": "string",
+              "default": "#"
+            },
+            "text": {
+              "type": "string",
+              "default": "Twitter"
+            },
+            "chevron": {
+              "type": "string",
+              "default": ""
+            }
+          },
+          "required": ["href","text"],
+          "additionalProperties": false
+        }
+      },
+      "required": ["icon","link"],
+      "additionalProperties": false
+    }
+  },
+  "title": "Icon Links",
+  "category": "molecule",
+  "type": "object",
+  "properties": {
+    "name": {
+      "description": "The name of the pattern, used to identify pattern files during validation",
+      "type": "string",
+      "default": "icon-links",
+      "options": {
+        "hidden": true
+      }
+    },
+    "iconLinks": {
+      "type": "object",
+      "properties": {
+        "items": {
+          "items": {
+            "$ref": "#definitions/iconLink"
+          },
+          "type": "array",
+          "minItems": 1
+        }
+      },
+      "required": ["items"],
+      "additionalProperties": false
+    }
+  },
+  "required": ["iconLinks"],
+  "additionalProperties": false
+}

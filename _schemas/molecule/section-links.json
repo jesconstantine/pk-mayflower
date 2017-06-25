@@ -1,0 +1,79 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "definitions": {
+    "link": {
+      "type": "object",
+      "properties": {
+        "href": {
+          "type": "string",
+          "default": "#"
+        },
+        "text": {
+          "type": "string",
+          "default": "First Section Link"
+        },
+        "chevron": {
+          "type": "string",
+          "default": ""
+        }
+      },
+      "required": ["href","text"],
+      "additionalProperties": false
+    }
+  },
+  "title": "Section Links",
+  "category": "molecule",
+  "type": "object",
+  "properties": {
+    "name": {
+      "description": "The name of the pattern, used to identify pattern files during validation",
+      "type": "string",
+      "default": "section-links",
+      "options": {
+        "hidden": true
+      }
+    },
+    "sectionLinks": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "string",
+          "default": "GUIDasjdhf1"
+        },
+        "catIcon": {
+          "$ref": "../atom/icons/cat-icon.json#/definitions/catIcon"
+        },
+        "title" : {
+          "type": "object",
+          "properties": {
+            "href": {
+              "type": "string",
+              "default": "#"
+            },
+            "text": {
+              "type": "string",
+              "default": "Recreational Licenses & Permits"
+            }
+          },
+          "required": ["href","text"],
+          "additionalProperties": false
+        },
+        "description":{
+          "type": "string",
+          "default": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque rutrum mauris quam, et imperdiet purus pellentesque vel."
+        },
+        "links": {
+          "items": {
+            "$ref": "#definitions/link"
+          },
+          "type": "array",
+          "minItems": 1
+        }
+      },
+      "required": ["id","title","links"],
+      "additionalProperties": false
+    }
+  },
+  "required": ["sectionLinks"],
+  "additionalProperties": false
+}

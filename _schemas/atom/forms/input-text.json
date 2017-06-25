@@ -1,0 +1,45 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "title": "Input Text",
+  "category": "atom",
+  "type": "object",
+  "properties": {
+    "name": {
+      "description": "The name of the pattern, used to identify pattern files during validation",
+      "type": "string",
+      "default": "input-text",
+      "options": {
+        "hidden": true
+      }
+    },
+    "inputText": {
+      "type": "object",
+      "properties": {
+        "labelText": {
+          "type": "string",
+          "default": "Your Name"
+        },
+        "required": {
+          "type": "boolean",
+          "default": true
+        },
+        "id": {
+          "type": "string",
+          "default": "text-input"
+        },
+        "name": {
+          "type": "string",
+          "default": "text-input"
+        },
+        "placeholder": {
+          "type":"string",
+          "default": "full name"
+        }
+      },
+      "required": ["labelText","required","id","name","placeholder"],
+      "additionalProperties": false
+    }
+  },
+  "required": ["inputText"],
+  "additionalProperties": false
+}

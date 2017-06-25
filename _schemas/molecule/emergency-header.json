@@ -1,0 +1,29 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "title": "Emergency Header",
+  "category": "molecule",
+  "type": "object",
+  "properties": {
+    "name": {
+      "description": "The name of the pattern, used to identify pattern files during validation",
+      "type": "string",
+      "default": "emergency-header",
+      "options": {
+        "hidden": true
+      }
+    },
+    "emergencyHeader": {
+      "type": "object",
+      "properties": {
+        "title": {
+          "type": "string",
+          "default": "The State is experiencing severe weather due to the winter storm Paula."
+        }
+      },
+      "required": ["title"],
+      "additionalProperties": false
+    }
+  },
+  "required": ["emergencyHeader"],
+  "additionalProperties": false
+}

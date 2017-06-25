@@ -1,0 +1,40 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "definitions": {
+    "button": {
+      "type": "object",
+      "properties": {
+        "href": {
+          "type": "string",
+          "format": "uri",
+          "default": "http://www.google.com"
+        },
+        "text": {
+          "type": "string",
+          "format": "textarea",
+          "default": "my button"
+        }
+      },
+      "required": ["href","text"],
+      "additionalProperties": false
+    }
+  },
+  "title": "Button Link",
+  "category": "atom",
+  "type": "object",
+  "properties": {
+    "name": {
+      "description": "The name of the pattern, used to identify pattern files during validation",
+      "type": "string",
+      "default": "button-link",
+      "options": {
+        "hidden": true
+      }
+    },
+    "buttonMain": {
+      "$ref": "#/definitions/button"
+    }
+  },
+  "required": ["buttonMain"],
+  "additionalProperties": false
+}

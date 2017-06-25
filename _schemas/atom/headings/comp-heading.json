@@ -1,0 +1,39 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "title": "Comp Heading",
+  "category": "atom",
+  "type": "object",
+  "properties": {
+    "name": {
+      "description": "The name of the pattern, used to identify pattern files during validation",
+      "type": "string",
+      "default": "comp-heading",
+      "options": {
+        "hidden": true
+      }
+    },
+    "compHeading": {
+      "properties": {
+        "title": {
+          "type": "string",
+          "default": "My Title"
+        },
+        "sub": {
+          "type": "boolean"
+        },
+        "id": {
+          "type": "string"
+        },
+        "centered": {
+          "enum": [ "true", "false" ]
+        },
+        "color": {
+          "enum": [ "green", "yellow" ]
+        }
+      },
+      "additionalProperties": false
+    }
+  },
+  "required": ["compHeading"],
+  "additionalProperties": false
+}

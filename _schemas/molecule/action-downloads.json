@@ -1,0 +1,68 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "definitions": {
+    "actionDownload": {
+      "type": "object",
+      "properties": {
+        "icon": {
+          "type": "string",
+          "description": "Path to the file type icon",
+          "enum": [
+            "@atoms/icons/svg-doc-docx.twig",
+            "@atoms/icons/svg-doc-generic.twig",
+            "@atoms/icons/svg-doc-pdf.twig",
+            "@atoms/icons/svg-doc-xlsx.twig"
+          ]
+        },
+        "text": {
+          "type": "string",
+          "default": "My Download",
+          "description": "File download link text"
+        },
+        "href": {
+          "type": "string",
+          "default": "http://www.mass.gov"
+        },
+        "type": {
+          "type": "string",
+          "default": "",
+          "description": ""
+        },
+        "size": {
+          "type": "string",
+          "default": "30kb",
+          "description": "File size"
+        },
+        "format": {
+          "type": "string",
+          "default": "PDF",
+          "description": "File type"
+        }
+      },
+      "required": ["icon", "text", "href", "size", "format"],
+      "additionalProperties": false
+    }
+  },
+  "title": "Action Downloads",
+  "category": "molecule",
+  "type": "object",
+  "properties": {
+    "name": {
+      "description": "The name of the pattern, used to identify pattern files during validation",
+      "type": "string",
+      "default": "action-downloads",
+      "options": {
+        "hidden": true
+      }
+    },
+    "actionDownloads": {
+      "items": {
+        "$ref": "#/definitions/actionDownload"
+      },
+      "type": "array",
+      "minItems": 1
+    }
+  },
+  "required": ["actionDownloads"],
+  "additionalProperties": false
+}

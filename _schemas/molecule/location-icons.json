@@ -1,0 +1,60 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "definitions": {
+    "locationIcon": {
+      "type": "object",
+      "properties": {
+        "path": {
+          "type": "string",
+          "enum": [
+            "@atoms/icons/svg-transit.twig",
+            "@atoms/icons/svg-castle.twig",
+            "@atoms/icons/svg-wheelchair.twig",
+            "@atoms/icons/svg-dog.twig"
+          ]
+        },
+        "name": {
+          "type": "string",
+          "enum": [
+            "Transit Friendly",
+            "Historic Site",
+            "Wheelchair Accessible",
+            "Dogs Allowed"
+          ]
+        }
+      },
+      "required": ["path", "name"],
+      "additionalProperties": false
+    }
+  },
+  "title": "Location Icons",
+  "category": "molecule",
+  "type": "object",
+  "properties": {
+    "name": {
+      "description": "The name of the pattern, used to identify pattern files during validation",
+      "type": "string",
+      "default": "location-icons",
+      "options": {
+        "hidden": true
+      }
+    },
+    "locationIcons": {
+      "type": "object",
+      "properties": {
+        "icons": {
+          "items": {
+            "$ref": "#definitions/locationIcon"
+          },
+          "type": "array",
+          "minItems": 1,
+          "maxItems": 8
+        }
+      },
+      "required": ["icons"],
+      "additionalProperties": false
+    }
+  },
+  "required": ["locationIcons"],
+  "additionalProperties": false
+}

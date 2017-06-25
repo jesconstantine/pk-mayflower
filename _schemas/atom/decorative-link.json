@@ -1,0 +1,52 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "definitions": {
+    "link": {
+      "type": "object",
+      "properties": {
+        "type": {
+          "enum": ["external", "internal", ""]
+        },
+        "href": {
+          "type": "string",
+          "default": "http://www.google.com"
+        },
+        "text": {
+          "type": "string",
+          "format": "textarea",
+          "default": "My Link"
+        },
+        "property": {
+          "description": "schema.org property",
+          "type": "string",
+          "format": "textarea"
+        },
+        "info": {
+          "description": "screenreader help text for link",
+          "type": "string",
+          "format": "textarea"
+        }
+      },
+      "required": ["type","href","text"],
+      "additionalProperties": false
+    }
+  },
+  "title": "Decorative Link",
+  "category": "atom",
+  "type": "object",
+  "properties": {
+    "name": {
+      "description": "The name of the pattern, used to identify pattern files during validation",
+      "type": "string",
+      "default": "decorative-link",
+      "options": {
+        "hidden": true
+      }
+    },
+    "decorativeLink": {
+      "$ref": "#/definitions/link"
+    }
+  },
+  "required": ["decorativeLink"],
+  "additionalProperties": false
+}

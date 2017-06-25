@@ -1,0 +1,48 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "definitions": {
+    "image": {
+      "type": "object",
+      "properties": {
+        "alt": {
+          "type": "string",
+          "default": "My descriptive text"
+        },
+        "src": {
+          "type": "string",
+          "default": "/assets/images/placeholder/800x400.png"
+        },
+        "height": {
+          "type": "number",
+          "minimum": "0",
+          "default": 400
+        },
+        "width": {
+          "type": "number",
+          "minimum": "0",
+          "default": 800
+        }
+      },
+      "required": ["src"],
+      "additionalProperties": false
+    }
+  },
+  "title": "Image",
+  "category": "atom",
+  "type": "object",
+  "properties": {
+    "name": {
+      "description": "The name of the pattern, used to identify pattern files during validation",
+      "type": "string",
+      "default": "image",
+      "options": {
+        "hidden": true
+      }
+    },
+    "image": {
+      "$ref": "#/definitions/image"
+    }
+  },
+  "required": ["image"],
+  "additionalProperties": false
+}

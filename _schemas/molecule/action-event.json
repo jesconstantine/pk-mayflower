@@ -1,0 +1,121 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "definitions": {
+    "actionEvent": {
+      "type": "object",
+      "properties": {
+        "name": {
+          "type": "object",
+          "properties": {
+            "type": {
+              "type": "string",
+              "description": "Is this an internal (NULL) or external link"
+            },
+            "href": {
+              "type": "string",
+              "default": "http://www.mass.gov",
+              "description": "The link url target"
+            },
+            "text": {
+              "type": "string",
+              "default": "My event name",
+              "description": "The link text"
+            },
+            "property": {
+              "type": "string",
+              "default": "url",
+              "description": "Schema.org",
+              "options": {
+                "hidden": true
+              }
+            }
+          },
+          "required": ["href","text"],
+          "additionalProperties": false
+        },
+        "date": {
+          "type": "string",
+          "default": "January 1, 1970",
+          "description": "Event Date"
+        },
+        "description": {
+          "type": "string",
+          "default": "This is my event description",
+          "description": "Event description"
+        },
+        "meta": {
+          "type": "object",
+          "properties": {
+            "location": {
+              "type": "object",
+              "properties": {
+                "name":{
+                  "type": "string",
+                  "description": "Event location name"
+                },
+                "address1":{
+                  "type": "string",
+                  "description": "Event location street address (line 1)"
+                },
+                "address2":{
+                  "type": "string",
+                  "description": "Event location street address (line 2)"
+                },
+                "city":{
+                  "type": "string",
+                  "description": "Event location city"
+                },
+                "state":{
+                  "type": "string",
+                  "description": "Event location state"
+                },
+                "zip":{
+                  "type": "string",
+                  "description": "Event location zipcode"
+                },
+                "image": {
+                  "type": "object",
+                  "properties": {
+                    "alt":{
+                      "type": "string",
+                      "description": "Image descriptive alt text"
+                    },
+                    "src": {
+                      "type": "string",
+                      "description": "Path to the image file"
+                    }
+                  },
+                  "required": ["src"],
+                  "additionalProperties": false
+                }
+              },
+              "additionalProperties": false
+            }
+          },
+          "required": ["location"],
+          "additionalProperties": false
+        }
+      },
+      "required": ["name", "date"],
+      "additionalProperties": false
+    }
+  },
+  "title": "Action Event",
+  "category": "molecule",
+  "type": "object",
+  "properties": {
+    "name": {
+      "description": "The name of the pattern, used to identify pattern files during validation",
+      "type": "string",
+      "default": "action-event",
+      "options": {
+        "hidden": true
+      }
+    },
+    "actionEvent": {
+      "$ref": "#/definitions/actionEvent"
+    }
+  },
+  "required": ["actionEvent"],
+  "additionalProperties": false
+}

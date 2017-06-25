@@ -1,0 +1,66 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "definitions": {
+    "mainNavItem": {
+      "type": "object",
+      "properties": {
+        "href": {
+          "type": "string",
+          "default": "#"
+        },
+        "text": {
+          "type": "string",
+          "default": "Living"
+        },
+        "active": {
+          "type": "string",
+          "enum": ["", "true"]
+        },
+        "subNav": {
+          "items": {
+            "type": "object",
+            "properties": {
+              "href": {
+                "type": "string",
+                "default": "#"
+              },
+              "text": {
+                "type": "string",
+                "default": "Health & Social Services"
+              }
+            },
+            "required": ["href","text"],
+            "additionalProperties": false
+          },
+          "type": "array",
+          "minItems": 1
+        }
+      },
+      "required": ["href","text","subNav"],
+      "additionalProperties": false
+    }
+  },
+  "title": "Main Nav",
+  "category": "molecule",
+  "type": "object",
+  "properties": {
+    "name": {
+      "description": "The name of the pattern, used to identify pattern files during validation",
+      "type": "string",
+      "default": "main-nav",
+      "options": {
+        "hidden": true
+      }
+    },
+    "mainNav": {
+      "items": {
+        "$ref": "#definitions/mainNavItem"
+      },
+      "type": "array",
+      "minItems": 1,
+      "maxItems": 8
+    }
+  },
+  "required": ["mainNav"],
+  "additionalProperties": false
+}

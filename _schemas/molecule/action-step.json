@@ -1,0 +1,34 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "title": "Action Step",
+  "category": "molecule",
+  "type": "object",
+  "properties": {
+    "name": {
+      "description": "The name of the pattern, used to identify pattern files during validation",
+      "type": "string",
+      "default": "action-step",
+      "options": {
+        "hidden": true
+      }
+    },
+    "actionStep": {
+      "type": "object",
+      "properties": {
+        "icon": {
+          "type": "string",
+          "enum": ["@atoms/icons/svg-circle-chevron.twig", "@atoms/icons/svg-phone.twig", "@atoms/icons/svg-mail.twig", "@atoms/icons/svg-fax.twig", "@atoms/icons/svg-profile.twig", "@atoms/icons/svg-laptop.twig" ]
+        },
+        "title": {
+          "type": "string",
+          "default": "My Step"
+        },
+        "rteElements": {
+          "$ref": "../organism/by-author/rich-text.json#/properties/rteElements"
+        }
+      }
+    }
+  },
+  "required": ["actionStep"],
+  "additionalProperties": false
+}

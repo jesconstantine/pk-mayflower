@@ -1,0 +1,37 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "title": "Callout Stats",
+  "category": "molecule",
+  "type": "object",
+  "properties": {
+    "name": {
+      "description": "The name of the pattern, used to identify pattern files during validation",
+      "type": "string",
+      "default": "callout-stats",
+      "options": {
+        "hidden": true
+      }
+    },
+    "statsCallout": {
+      "type": "object",
+      "properties": {
+        "pull": {
+          "type": "string",
+          "enum": ["","left","right"]
+        },
+        "stat": {
+          "type": "string",
+          "default": "$12",
+          "description": "The larger content"
+        },
+        "content": {
+          "type": "string",
+          "default": "standard fee for residents",
+          "description": "The paragraph content that appears"
+        }
+      }
+    }
+  },
+  "required": ["statsCallout"],
+  "additionalProperties": false
+}

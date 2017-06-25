@@ -1,0 +1,49 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "title": "Illustrated Link",
+  "category": "molecule",
+  "type": "object",
+  "properties": {
+    "name": {
+      "description": "The name of the pattern, used to identify pattern files during validation",
+      "type": "string",
+      "default": "illustrated-link",
+      "options": {
+        "hidden": true
+      }
+    },
+    "illustratedLink": {
+      "type": "object",
+      "properties": {
+        "view": {
+          "type": "string",
+          "default": "guide"
+        },
+        "text": {
+          "type": "string",
+          "default": "Getting Outdoors in Massachusetts"
+        },
+        "type": {
+          "type": "string",
+          "enum": ["", "external"]
+        },
+        "href": {
+          "type": "string",
+          "default": "#"
+        },
+        "image": {
+          "type": "string",
+          "default": "/assets/images/placeholder/130x160.png"
+        },
+        "label": {
+          "type": "string",
+          "default": "Guide:"
+        }
+      },
+      "required": ["text","type","href"],
+      "additionalProperties": false
+    }
+  },
+  "required": ["illustratedLink"],
+  "additionalProperties": false
+}

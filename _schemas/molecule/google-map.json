@@ -1,0 +1,119 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "definitions": {
+    "lat": {
+      "type": "number",
+      "default": 42.366565
+    },
+    "lng": {
+      "type": "number",
+      "default": -71.058940
+    }
+  },
+  "title": "Google Map",
+  "category": "molecule",
+  "type": "object",
+  "properties": {
+    "name": {
+      "description": "The name of the pattern, used to identify pattern files during validation",
+      "type": "string",
+      "default": "google-map",
+      "options": {
+        "hidden": true
+      }
+    },
+    "googleMap": {
+      "type": "object",
+      "properties": {
+        "map": {
+          "type": "object",
+          "properties": {
+            "center": {
+              "type": "object",
+              "properties": {
+                "lat": {
+                  "$ref": "#definitions/lat"
+                },
+                "lng": {
+                  "$ref": "#definitions/lng"
+                }
+              },
+              "required": ["lat", "lng"],
+              "additionalProperties": false
+            },
+            "zoom": {
+              "type": "number",
+              "default": 16
+            }
+          },
+          "required": ["center", "zoom"],
+          "additionalProperties": false
+        },
+        "markers": {
+          "items": {
+            "type": "object",
+            "properties": {
+              "position": {
+                "type": "object",
+                "properties": {
+                  "lat": {
+                    "$ref": "#definitions/lat"
+                  },
+                  "lng": {
+                    "$ref": "#definitions/lng"
+                  },
+                  "required": [
+                    "lat",
+                    "lng"
+                  ],
+                  "additionalProperties": false
+                }
+              },
+              "label": {
+                "type": "string",
+                "default": "A"
+              },
+              "infoWindow": {
+                "type": "object",
+                "properties": {
+                  "name": {
+                    "type": "string",
+                    "default": "Department of Conservation and Recreation"
+                  },
+                  "phone": {
+                    "type": "string",
+                    "default": "16176261250"
+                  },
+                  "fax": {
+                    "type": "string",
+                    "default": "16176261351"
+                  },
+                  "email": {
+                    "type": "string",
+                    "default": "mass.parks@state.ma.us"
+                  },
+                  "address": {
+                    "type": "string",
+                    "default": "251 Causeway Street, Suite 900<br />Boston, MA 02114-2104"
+                  }
+                },
+                "required": [
+                  "name",
+                  "address"
+                ],
+                "additionalProperties": false
+              }
+            }
+          },
+          "type": "array",
+          "minItems": 1,
+          "additionalProperties": false
+        }
+      },
+      "required": ["map", "markers"],
+      "additionalProperties": false
+    }
+  },
+  "required": ["googleMap"],
+  "additionalProperties": false
+}

@@ -1,0 +1,52 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "definitions": {
+    "galleryItem": {
+      "type": "object",
+      "properties": {
+        "src": {
+          "type": "string",
+          "default": "/assets/images/placeholder/80x80.png",
+          "description": "Path to the image"
+        },
+        "alt": {
+          "type": "string",
+          "default": "Gallery image",
+          "description": "Descriptive text for the image"
+        }
+      },
+      "required": ["src"],
+      "additionalProperties": false
+    }
+  },
+  "title": "Action Gallery",
+  "category": "molecule",
+  "type": "object",
+  "properties": {
+    "name": {
+      "description": "The name of the pattern, used to identify pattern files during validation",
+      "type": "string",
+      "default": "action-gallery",
+      "options": {
+        "hidden": true
+      }
+    },
+    "actionGallery": {
+      "type": "object",
+      "properties": {
+        "link": {
+          "$ref": "../atom/decorative-link.json#/definitions/link"
+        },
+        "items": {
+          "items": {
+            "$ref": "#/definitions/galleryItem"
+          },
+          "type": "array",
+          "minItems": 1
+        }
+      }
+    }
+  },
+  "required": ["actionGallery"],
+  "additionalProperties": false
+}

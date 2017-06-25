@@ -1,0 +1,25 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "title": "Callout Links",
+  "category": "organism",
+  "type": "object",
+  "properties": {
+    "name": {
+      "description": "The name of the pattern, used to identify pattern files during validation",
+      "type": "string",
+      "default": "callout-links",
+      "options": {
+        "hidden": true
+      }
+    },
+    "calloutLinks": {
+      "items": {
+        "$ref": "../../molecule/callout-link.json#/properties/calloutLink"
+      },
+      "type": "array",
+      "minItems": 2
+    }
+  },
+  "required": ["calloutLinks"],
+  "additionalProperties": false
+}

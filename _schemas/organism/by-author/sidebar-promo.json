@@ -1,0 +1,39 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "title": "Sidebar Promo",
+  "category": "organism",
+  "type": "object",
+  "properties": {
+    "name": {
+      "description": "The name of the pattern, used to identify pattern files during validation",
+      "type": "string",
+      "default": "sidebar-promo",
+      "options": {
+        "hidden": true
+      }
+    },
+    "sidebarPromo": {
+      "type": "object",
+      "properties": {
+        "sidebarHeading": {
+          "$ref": "../../atom/headings/sidebar-heading.json#/properties/sidebarHeading"
+        },
+        "image": {
+          "$ref": "../../atom/media/image.json#/properties/image"
+        },
+        "content": {
+          "type": "string",
+          "format": "textarea",
+          "default": "This could link to another relevant page, such as the in court bail process or bail for juveniles. We can have variations for cross promo components. Some wouldn't need an image or description, as seen in the components below this one. Com sociis natoque penatibus et magnis dis."
+        },
+        "link": {
+          "$ref": "../../atom/text/link.json#/properties/link"
+        }
+      },
+      "required": ["sidebarHeading", "link"],
+      "additionalProperties": false
+    }
+  },
+  "required": ["sidebarPromo"],
+  "additionalProperties": false
+}
